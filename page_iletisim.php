@@ -18,8 +18,6 @@ get_header(); ?>
 <div id="iletisimContent" class="">
 
 <div id="iletisimInner">
-
-	<img id="muteOn" src="<?php bloginfo('template_directory') ?>/img/brush-iletisim-3.jpg">
    
     <h1 id='headerIletisim'><?php echo $post->post_title ?></h1>
 

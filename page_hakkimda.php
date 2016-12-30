@@ -25,21 +25,6 @@ get_header(); ?>
 	<?php  echo get_field('text'); ?>
 
 </div>
-		
-
-
-
-<div id="hakkimdaBrush1" class="slowScroll">
-		<img src="<?php bloginfo('template_directory') ?>/img/brush-hakkimda-1.jpg">
-</div>
-
-<div id="hakkimdaBrush2" class="slowScroll">
-		<img src="<?php bloginfo('template_directory') ?>/img/brush-hakkimda-2.jpg">
-</div>	
-			
-			
-			
-			
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

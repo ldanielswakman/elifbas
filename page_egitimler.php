@@ -63,16 +63,6 @@ get_header(); ?>
 
 
 </div>
-		
-<div id="egitimlerBrush1" class="slowScroll">
-		<img src="<?php bloginfo('template_directory') ?>/img/brush-egitimler-1.jpg">
-</div>
-
-<div id="egitimlerBrush2" class="slowScroll">
-		<img src="<?php bloginfo('template_directory') ?>/img/brush-egitimler-2.jpg">
-</div>
-		
-			
 			
 			
 			

@@ -47,22 +47,6 @@ get_header(); ?>
 
 </div>
 
-
-
-
-
-<div id="tiyatroBrush2" class="slowScroll">
-		<img src="<?php bloginfo('template_directory') ?>/img/brush-tiyatro-2.jpg">
-</div>		
-
-<div id="tiyatroBrush3" class="slowScroll">
-		<img src="<?php bloginfo('template_directory') ?>/img/brush-tiyatro-3.jpg">
-</div>		
-			
-			
-			
-			
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
