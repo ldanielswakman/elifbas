@@ -28,9 +28,16 @@
 <div id="page" class="site">
 
 
-	<nav>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><span id='siteLogo'></span></a>
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'menu-wrapper' ) ); ?>
-	</nav>
+  <header id="masthead" class="site-header" role="banner">
+    
+    <div class="site-branding">
+        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span id='siteLogo'></span></a></h1>
 
-	<div id="content" class="site-content">
+    </div><!-- .site-branding -->
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+    </nav><!-- #site-navigation -->
+  </header><!-- #masthead -->
+
+  <div id="content" class="site-content">
