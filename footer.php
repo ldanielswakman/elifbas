@@ -35,6 +35,21 @@
   </div>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+
+  <div class="row"><!-- Nav start -->
+    <div class="col-xs-5 col-sm-2 u-aligncenter u-leftshadow">
+    </div>
+    <div class="col-xs-7 col-sm-3 u-leftshadow u-p-content">
+    </div>
+    <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra" style="height: 4rem;">
+      <a href="http://www.ldaniel.eu" target="_blank" class="u-dogear--br">
+        <span class="text">
+          <span style="opacity: 0.4; font-size: 0.6em;">designed by</span><br>
+          ldaniel.eu
+        </span>
+      </a>
+    </div>
+  </div>
 		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
