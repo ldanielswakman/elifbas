@@ -13,7 +13,6 @@
       $menu = wp_get_nav_menu_object( $locations['primary'] );
       $menuitems = wp_get_nav_menu_items( $menu->term_id, array() );
       $i = 0;
-      $menu_array = array();
       $is_next_page = false;
 
       foreach( $menuitems as $item) {
@@ -25,9 +24,8 @@
           echo '<a href="' . $link . '" class="button">' . pll__('next') . ': ' . $page->post_title . '</a>';
           break;
         }
-        if($id == $post->ID) {
-          $is_next_page = true;
-        }
+        if($id == $post->ID) { $is_next_page = true; }
+
         $i++;
       }
       ?>
