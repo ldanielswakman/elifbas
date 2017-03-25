@@ -107,10 +107,6 @@ function elifbas_scripts() {
 	wp_enqueue_script( 'elifbas-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'elifbas-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'elifbas_scripts' );
 
@@ -148,3 +144,32 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 wp_enqueue_script( 'TweenMax-js', get_template_directory_uri() . '/js/greensock-js/TweenMax.min.js', array(), '20160910', true );
 wp_enqueue_script( 'zekimurenhotline-js', get_template_directory_uri() . '/js/elifbas.js', array(), '20160910', true );
+
+wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/jquery.sticky-kit.min.js', array(), '20170320', true );
+
+
+// Convert numeric to roman number
+function romanic_number($integer, $upcase = true) { 
+    $table = array('M'=>1000, 'CM'=>900, 'D'=>500, 'CD'=>400, 'C'=>100, 'XC'=>90, 'L'=>50, 'XL'=>40, 'X'=>10, 'IX'=>9, 'V'=>5, 'IV'=>4, 'I'=>1);
+    $return = ''; 
+    while($integer > 0) 
+    { 
+        foreach($table as $rom=>$arb) 
+        { 
+            if($integer >= $arb) 
+            { 
+                $integer -= $arb; 
+                $return .= $rom; 
+                break; 
+            } 
+        } 
+    } 
+
+    return $return; 
+} 
+
+
+// Translation strings
+pll_register_string('Detail open button', 'detail_open');
+pll_register_string('Detail close button', 'detail_close');
+pll_register_string('Next', 'next');

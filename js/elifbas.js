@@ -1,10 +1,12 @@
+$(document).ready(function() {
 
+	// set body class for starting interactions
+	$('body').addClass('isLoaded');
 
+	// invoke sticky kit on elements
+	$('.u-sticky').stick_in_parent();
 
-
-
-
-
+});
 
 
 $(window).resize(function() {
@@ -80,12 +82,12 @@ runHome = function() {
 	TweenMax.to(siteBranding, 2, {opacity:1, delay:2, force3D: true});
 	TweenMax.to(headerBrush, 2, {x:0, opacity:1, delay:2.5, force3D: true});
 	
-	$.each( $('li.menu-item') , function( k, v ) {
+	// $.each( $('li.menu-item') , function( k, v ) {
 	
-		var _d = 3 + (k*0.15);
-		TweenMax.to($(this), 2, {opacity:1, delay:_d});
+	// 	var _d = 3 + (k*0.15);
+	// 	TweenMax.to($(this), 2, {opacity:1, delay:_d});
 	
-	});
+	// });
 	
 },
 
@@ -98,12 +100,12 @@ runEgitimler = function() {
 	TweenMax.to($(siteBranding), 2, {opacity:1, delay:0});
 	TweenMax.to(headerEgitimlerContainer, 2, {opacity:1, backgroundPosition:"100px 0px", delay:0});
 
-	$.each( $('li.menu-item') , function( k, v ) {
+	// $.each( $('li.menu-item') , function( k, v ) {
 	
-		var _d = 0.15 + (k*0.15);
-		TweenMax.to($(this), 2, {opacity:1, delay:_d});
+	// 	var _d = 0.15 + (k*0.15);
+	// 	TweenMax.to($(this), 2, {opacity:1, delay:_d});
 	
-	});
+	// });
 
 	$.each( $('div.egitim') , function( k, v ) {
 	
@@ -112,13 +114,9 @@ runEgitimler = function() {
 	
 	});
 
-	var egitimDetailButton = $('div.egitimDetailButton');
-
-	$.each( egitimDetailButton, function( k, v ) {
-	
+	$.each($('.js-detail-toggle-button'), function() {
 		$(this).mouseup(function() {
-			$(this).parent().find('div.egitimDetail').css('height','auto');
-			TweenMax.to($(this).parent().find('div.egitimDetail'), 2, {opacity:1});
+			$(this).closest('.detail-wrapper').toggleClass('isExpanded');
 		});
 	
 	});
@@ -138,12 +136,12 @@ runHakkimda = function() {
 
 	
 
-	$.each( $('li.menu-item') , function( k, v ) {
+	// $.each( $('li.menu-item') , function( k, v ) {
 	
-		var _d = 0.15 + (k*0.15);
-		TweenMax.to($(this), 2, {opacity:1, delay:_d});
+	// 	var _d = 0.15 + (k*0.15);
+	// 	TweenMax.to($(this), 2, {opacity:1, delay:_d});
 	
-	});
+	// });
 
 	
 
@@ -156,12 +154,12 @@ runTiyatro = function() {
 
 	TweenMax.to($(siteBranding), 2, {opacity:1, delay:0});
 
-	$.each( $('li.menu-item') , function( k, v ) {
+	// $.each( $('li.menu-item') , function( k, v ) {
 	
-		var _d = 0.15 + (k*0.15);
-		TweenMax.to($(this), 2, {opacity:1, delay:_d});
+	// 	var _d = 0.15 + (k*0.15);
+	// 	TweenMax.to($(this), 2, {opacity:1, delay:_d});
 	
-	});
+	// });
 
 },
 
@@ -172,12 +170,12 @@ runIletisim = function() {
 
 	TweenMax.to($(siteBranding), 2, {opacity:1, delay:0});
 
-	$.each( $('li.menu-item') , function( k, v ) {
+	// $.each( $('li.menu-item') , function( k, v ) {
 	
-		var _d = 0.15 + (k*0.15);
-		TweenMax.to($(this), 2, {opacity:1, delay:_d});
+	// 	var _d = 0.15 + (k*0.15);
+	// 	TweenMax.to($(this), 2, {opacity:1, delay:_d});
 	
-	});
+	// });
 
 	$.each( $('div.itelisimItem') , function( k, v ) {
 	

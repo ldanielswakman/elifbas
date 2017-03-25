@@ -3,52 +3,59 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="row">
 
-			
+	<?php // Title ?>
+  <div class="col-xs-12 col-sm-2 u-leftshadow"></div>
+  <div class="col-xs-12 col-sm-3 u-leftshadow"></div>
+  <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content u-p-content-large">
+  	<h1 class="h1--curl<?php echo rand(1, 4); ?>"><?php echo $post->post_title ?></h1>
+	</div>
 
-			
-<div id="headerTiyatroContainer">
-    <h1 id='headerTiyatro'><?php echo $post->post_title ?></h1>
 </div>
 
-
-
-
-<div id="tiyatroContent" class="">
-		
-	
-	<?php if( have_rows('oyunlar') ): ?>
-
+<?php if( have_rows('oyunlar') ): ?>
 
 	<?php while( have_rows('oyunlar') ): the_row(); ?>
 
-		<div class="oyun">
+		<div class="row">
 
-		<div class="oyunColumnLeft" style="background-image: url('<?php echo get_sub_field('brush'); ?>')">
-		  <span class="oyunTitle"><?php echo get_sub_field('title'); ?></span>  
-		  <span class="oyunDetail"><?php echo get_sub_field('detail'); ?></span>  
+		 	<div class="col-xs-12 col-sm-2 u-leftshadow"></div>
+	    <div class="col-xs-12 col-sm-3 u-leftshadow u-leftshadow--extra u-p-content u-pb1">
+	    	<div class="u-sticky">
+		    	<h2><?php echo get_sub_field('title'); ?></h2>
+		    	<?php echo get_sub_field('detail'); ?>
+	    	</div>
+	    </div>
+
+	    <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content-large u-pb1">
+
+				<img src="<?php echo get_sub_field('image'); ?>" alt="" />
+
+				<?php echo get_sub_field('text'); ?>
+
+	  	</div>
+
 		</div>
 
-		<div class="oyunColumnRight">
-		    <span class="oyunText"><?php echo get_sub_field('text'); ?></span>  
-		  <span class="oyunImage"><img src="<?php echo get_sub_field('image'); ?>"></span>  
-		</div>
-		
+		<div class="row">
+
+		 	<div class="col-xs-12 col-sm-2 u-leftshadow"></div>
+	    <div class="col-xs-12 col-sm-3 u-leftshadow u-p-content"></div>
+
+	    <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content-large">
+
+				<div class="u-aligncenter u-mv3" style="max-width: 36em;">
+					<img src="<?php echo get_template_directory_uri() ?>/img/separator.svg" alt="" style="width: 300px; max-width: 70vw; opacity: 0.25;" />
+				</div>
+
+	  	</div>
 
 		</div>
 
 	<?php endwhile; ?>
 
-	</ul>
-
 <?php endif; ?>
-
-</div>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
 get_sidebar();

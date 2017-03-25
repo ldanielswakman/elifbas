@@ -18,7 +18,9 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
+  <!-- <link href="<?php echo get_template_directory_uri() ?>/flexboxgrid.min.css" rel="stylesheet" /> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Work+Sans:400,500,700" rel="stylesheet">
 
 	<?php wp_head(); ?>
 
@@ -27,17 +29,26 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
+  <nav class="row"><!-- Nav start -->
+    <div class="col-xs-5 col-sm-2 u-aligncenter u-leftshadow u-dogear u-pb2">
 
-  <header id="masthead" class="site-header" role="banner">
-    
-    <div class="site-branding">
-        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span id='siteLogo'></span></a></h1>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo u-sticky"></a>
 
-    </div><!-- .site-branding -->
+    </div>
+    <div class="col-xs-7 col-sm-3 u-leftshadow u-p-content u-pb2">
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-    </nav><!-- #site-navigation -->
-  </header><!-- #masthead -->
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => false ) ); ?>
+
+      <ul class="menu menu--lang">
+        <?php pll_the_languages(array('display_names_as' => 'slug')) ?>
+      </ul>
+
+    </div>
+    <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content u-flex-align-end u-pb2">
+      <?php if(strlen(get_field('big_text')) > 0) : ?>
+        <h2 class="u-inlineblock h2--curl<?php echo rand(1, 4); ?>"><?php echo get_field('big_text'); ?></h2>
+      <?php endif ?>
+    </div>
+  </nav>
 
   <div id="content" class="site-content">

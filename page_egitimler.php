@@ -3,72 +3,58 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="row">
 
-			
+	<?php // Title ?>
+  <div class="col-xs-12 col-sm-2 u-leftshadow"></div>
+  <div class="col-xs-12 col-sm-3 u-leftshadow"></div>
+  <div class="col-xs-12 col-sm-7 u-leftshadow u-p-content u-p-content-large">
+  	<h1 class="h1--curl<?php echo rand(1, 4); ?>"><?php echo $post->post_title ?></h1>
+	</div>
 
-			
-<div id="headerEgitimlerContainer">
-    <h1 id='headerEgitimler'><?php echo $post->post_title ?></h1>
 </div>
-
-
-
-
-<div id="egitimlerContent" class="">
-				
 
 <?php if( have_rows('egitimler') ): ?>
 
+	<?php $count = 1; while( have_rows('egitimler') ): the_row(); ?>
 
-	<?php while( have_rows('egitimler') ): the_row(); ?>
+		<div class="row">
 
-		<div class="egitim">
+		 	<div class="col-xs-12 col-sm-2 u-leftshadow"></div>
+	    <div class="col-xs-12 col-sm-3 u-leftshadow u-p-content u-aligncenter">
+	    	<h2><span class="circle" style="transform: rotate(<?php echo rand(1, 360); ?>deg);"></span><?php echo romanic_number($count, true) ?></h2>
+	    </div>
 
-		<div class="egitimNumber">
-		    <img src="<?php echo get_sub_field('number_image'); ?>">
+	    <div class="col-xs-12 col-sm-7 u-leftshadow u-p-content-large u-pb4">
+
+		    <h3><?php echo get_sub_field('header'); ?></h3>
+
+		    <?php echo get_sub_field('description'); ?>
+
+				<?php if(get_sub_field('detail')) : ?>
+
+					<div class="detail-wrapper">
+
+						<div class="detail">
+				    	<?php echo get_sub_field('detail'); ?>
+			    	</div>
+
+						<a href="javascript:void(0)" class="button js-detail-toggle-button">
+							<span class="more"><?php pll_e('detail_open') ?></span>
+							<span class="less"><?php pll_e('detail_close') ?></span>
+						</a>
+
+					</div>
+
+				<?php endif; ?>
+
+	  	</div>
+
 		</div>
 
-		<div class="egitimColumn2">
-		    <div class="egitimHeader">
-			    <?php echo get_sub_field('header'); ?>
-			</div>
-
-			<div class="egitimDescription">
-			    <?php echo get_sub_field('description'); ?>
-			</div>
-
-			<?php if(get_sub_field('detail_button')){ ?>
-
-			<div class="egitimDetailButton">
-				<img src="<?php echo get_sub_field('detail_button'); ?>">
-			</div>
-			
-			<div class="egitimDetail">
-			    <?php echo get_sub_field('detail'); ?>
-			</div>
-
-			<?php }  ?>
-
-		</div>
-
-		</div>
-
-	<?php endwhile; ?>
-
-	</ul>
+	<?php $count++; endwhile; ?>
 
 <?php endif; ?>
-
-
-</div>
-			
-			
-			
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
 get_sidebar();
