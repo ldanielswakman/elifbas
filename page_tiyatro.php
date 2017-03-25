@@ -46,7 +46,7 @@ get_header(); ?>
 	    <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content-large">
 
 				<div class="u-aligncenter u-mv3" style="max-width: 36em;">
-					<img src="<?php echo get_template_directory_uri() ?>/img/separator.svg" alt="" style="width: 300px; max-width: 70vw; opacity: 0.25;" />
+					<img src="<?php echo get_template_directory_uri() ?>/img/separator.svg" alt="" style="width: 300px; max-width: 70vw; opacity: 0.4;" />
 				</div>
 
 	  	</div>
