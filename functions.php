@@ -173,3 +173,5 @@ function romanic_number($integer, $upcase = true) {
 pll_register_string('Detail open button', 'detail_open');
 pll_register_string('Detail close button', 'detail_close');
 pll_register_string('Next', 'next');
+pll_register_string('Page can\'t be found!', 'page_not_found');
+pll_register_string('Return to the homepage', 'return_home');

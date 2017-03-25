@@ -1,25 +1,26 @@
-<?php
-/**
- * The template for displaying 404 pages (not found).
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package elifbas
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div class="row">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+  <?php // Title ?>
+  <div class="col-xs-12 col-sm-2 u-leftshadow"></div>
+  <div class="col-xs-12 col-sm-3 u-leftshadow"></div>
+  <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content u-p-content-large">
+  </div>
 
-		<div id="content404">
-		    Page Cannot Found
-		</div>
-		
-			
+  <div class="col-xs-12 col-sm-2 u-leftshadow"></div>
+  <div class="col-xs-12 col-sm-3 u-leftshadow u-leftshadow--extra u-p-content u-pb6">
+  </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+  <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content-large u-pb6">
+
+    <h2><?php pll_e('page_not_found') ?></h2>
+
+    <a href="<?php echo home_url() ?>" class="button u-mt2"><?php pll_e('return_home') ?></a>
+
+  </div>
+
+</div>
 
 <?php
 get_footer();

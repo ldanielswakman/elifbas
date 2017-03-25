@@ -9,24 +9,29 @@
     </div>
     <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content-large">
       <?php
-      $locations = get_nav_menu_locations();
-      $menu = wp_get_nav_menu_object( $locations['primary'] );
-      $menuitems = wp_get_nav_menu_items( $menu->term_id, array() );
-      $i = 0;
-      $is_next_page = false;
+      $template = get_post_meta( $post->ID, '_wp_page_template', true );
+      if ($template !== 'page_home.php') {
 
-      foreach( $menuitems as $item) {
-        $id = get_post_meta( $item->ID, '_menu_item_object_id', true );
-        $page = get_page( $id );
-        $link = get_page_link( $id );
+        $locations = get_nav_menu_locations();
+        $menu = wp_get_nav_menu_object( $locations['primary'] );
+        $menuitems = wp_get_nav_menu_items( $menu->term_id, array() );
+        $i = 0;
+        $is_next_page = false;
 
-        if($is_next_page === true) {
-          echo '<a href="' . $link . '" class="button">' . pll__('next') . ': ' . $page->post_title . '</a>';
-          break;
-        }
-        if($id == $post->ID) { $is_next_page = true; }
+        foreach( $menuitems as $item) {
+          $id = get_post_meta( $item->ID, '_menu_item_object_id', true );
+          $page = get_page( $id );
+          $link = get_page_link( $id );
 
-        $i++;
+          if($is_next_page === true) {
+            echo '<a href="' . $link . '" class="button">' . pll__('next') . ': ' . $page->post_title . '</a>';
+            break;
+          }
+          if($id == $post->ID) { $is_next_page = true; }
+
+          $i++;
+        } 
+        
       }
       ?>
     </div>
