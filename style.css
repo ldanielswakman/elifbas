@@ -442,9 +442,11 @@ figure {
 p + figure {
   margin-top: 1rem;
 }
-figure img {
+figure img,
+[class*="col-"] img {
   max-width: 100%;
 }
+
 
 
 
