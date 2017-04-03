@@ -79,10 +79,10 @@ function elifbas_scripts() {
   // load assets locally or from CDN
   if (in_array( $_SERVER['HTTP_HOST'], array( 'localhost', '127.0.0.1' ))) {
     // Flexbox Grid
-    wp_enqueue_script( 'flexbox-grid', get_template_directory_uri() . '/css/flexboxgrid.min.css', array(), '6.3.1' );
+    wp_enqueue_style( 'flexbox-grid', get_template_directory_uri() . '/css/flexboxgrid.min.css' );
   } else {
     // Flexbox Grid
-    wp_enqueue_script( 'flexbox-grid', 'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css', array(), '6.3.1', true );
+    wp_enqueue_style( 'flexbox-grid', 'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css' );
     // Google Fonts
     wp_enqueue_script( 'google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Work+Sans:400,500,700' );
   }
