@@ -90,7 +90,7 @@ function elifbas_scripts() {
   // Elif Baş Style
   wp_enqueue_style( 'elifbas-style', get_stylesheet_uri() );
   // Elif Baş Script
-  wp_enqueue_script( 'elifbas-js', get_template_directory_uri() . '/js/elifbas.js' );
+  // wp_enqueue_script( 'elifbas-js', get_template_directory_uri() . '/js/elifbas.js' );
 
 }
 add_action( 'wp_enqueue_scripts', 'elifbas_scripts' );

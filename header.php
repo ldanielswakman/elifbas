@@ -19,6 +19,19 @@
 
 	<?php wp_head(); ?>
 
+  <script>
+    // inserted directly in header because of tiny amount of JS
+    $(document).ready(function() {
+
+      // set body class for starting interactions
+      $('body').addClass('isLoaded');
+
+      // invoke sticky kit on elements
+      $('.u-sticky').stick_in_parent();
+
+    });
+  </script>
+
 </head>
 
 <body <?php body_class(); ?>>
