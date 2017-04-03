@@ -59,15 +59,6 @@
 
 <?php wp_footer(); ?>
 
-<style type="text/css">
-	span#siteLogo {
-		background-image: url('<?php echo get_field('logo_black', 115); ?>');
-	}
-	body.home span#siteLogo {
-		background-image: url('<?php echo get_field('logo_white', 115); ?>');
-	}
-</style>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

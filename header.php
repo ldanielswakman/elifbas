@@ -17,11 +17,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" />
-  <!-- <link href="<?php echo get_template_directory_uri() ?>/flexboxgrid.min.css" rel="stylesheet" /> -->
-
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Work+Sans:400,500,700" rel="stylesheet">
-
 	<?php wp_head(); ?>
 
 </head>

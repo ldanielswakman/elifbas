@@ -69,44 +69,29 @@ endif;
 add_action( 'after_setup_theme', 'elifbas_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function elifbas_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'elifbas_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'elifbas_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function elifbas_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'elifbas' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'elifbas' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'elifbas_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function elifbas_scripts() {
-	wp_enqueue_style( 'elifbas-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'elifbas-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+  // Sticky Kit
+  wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/jquery.sticky-kit.min.js', array(), '1.1.2', true );
 
-	wp_enqueue_script( 'elifbas-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+  // load assets locally or from CDN
+  if (in_array( $_SERVER['HTTP_HOST'], array( 'localhost', '127.0.0.1' ))) {
+    // Flexbox Grid
+    wp_enqueue_script( 'flexbox-grid', get_template_directory_uri() . '/css/flexboxgrid.min.css', array(), '6.3.1' );
+  } else {
+    // Flexbox Grid
+    wp_enqueue_script( 'flexbox-grid', 'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css', array(), '6.3.1', true );
+    // Google Fonts
+    wp_enqueue_script( 'google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Work+Sans:400,500,700' );
+  }
+
+  // Elif Baş Style
+  wp_enqueue_style( 'elifbas-style', get_stylesheet_uri() );
+  // Elif Baş Script
+  wp_enqueue_script( 'elifbas-js', get_template_directory_uri() . '/js/elifbas.js' );
+
 }
 add_action( 'wp_enqueue_scripts', 'elifbas_scripts' );
 
@@ -142,10 +127,7 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-wp_enqueue_script( 'TweenMax-js', get_template_directory_uri() . '/js/greensock-js/TweenMax.min.js', array(), '20160910', true );
-wp_enqueue_script( 'zekimurenhotline-js', get_template_directory_uri() . '/js/elifbas.js', array(), '20160910', true );
 
-wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/jquery.sticky-kit.min.js', array(), '20170320', true );
 
 
 // Convert numeric to roman number
