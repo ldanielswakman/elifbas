@@ -73,20 +73,20 @@ add_action( 'after_setup_theme', 'elifbas_setup' );
  */
 function elifbas_scripts() {
 
-  // Sticky Kit
-  wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/jquery.sticky-kit.min.js', array(), '1.1.2', true );
-
   // load assets locally or from CDN
   if (in_array( $_SERVER['HTTP_HOST'], array( 'localhost', '127.0.0.1' ))) {
-    // Flexbox Grid
-    wp_enqueue_style( 'flexbox-grid', get_template_directory_uri() . '/css/flexboxgrid.min.css' );
+    $flexboxgrid_url = get_template_directory_uri() . '/css/flexboxgrid.min.css';
   } else {
     // Flexbox Grid
-    wp_enqueue_style( 'flexbox-grid', 'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css' );
+    $flexboxgrid_url = 'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css';
     // Google Fonts
     wp_enqueue_script( 'google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Work+Sans:400,500,700' );
   }
 
+  // Sticky Kit
+  wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/jquery.sticky-kit.min.js', array(), '1.1.2' );
+  // Flexbox Grid
+  wp_enqueue_style( 'flexbox-grid', $flexboxgrid_url );
   // Elif Baş Style
   wp_enqueue_style( 'elifbas-style', get_stylesheet_uri() );
   // Elif Baş Script
