@@ -21,7 +21,7 @@ get_header(); ?>
 		<div class="row">
 
 		 	<div class="col-xs-12 col-sm-2 u-leftshadow"></div>
-	    <div class="col-xs-12 col-sm-3 u-leftshadow u-p-content u-aligncenter">
+	    <div class="col-xs-12 col-sm-3 u-leftshadow u-p-content u-aligncenter u-pb2">
 	    	<h2><span class="circle" style="transform: scale(1.<?php echo rand(1, 4) / 2; ?>) rotate(<?php echo rand(1, 360); ?>deg);"></span><?php echo romanic_number($count, true) ?></h2>
 	    </div>
 

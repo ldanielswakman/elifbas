@@ -29,6 +29,9 @@
       // invoke sticky kit on elements
       $('.u-sticky').stick_in_parent();
 
+      $('.js-detail-toggle-button').mouseup(function() {
+        $(this).closest('.detail-wrapper').toggleClass('isExpanded');   
+      });
     });
   </script>
 
