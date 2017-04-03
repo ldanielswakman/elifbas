@@ -80,7 +80,7 @@ function elifbas_scripts() {
     // Flexbox Grid
     $flexboxgrid_url = 'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css';
     // Google Fonts
-    wp_enqueue_script( 'google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Work+Sans:400,500,700' );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700|Work+Sans:400,500,700' );
   }
 
   // Sticky Kit
