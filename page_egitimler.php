@@ -8,7 +8,7 @@ get_header(); ?>
 	<?php // Title ?>
   <div class="col-xs-12 col-sm-2 u-leftshadow"></div>
   <div class="col-xs-12 col-sm-3 u-leftshadow"></div>
-  <div class="col-xs-12 col-sm-7 u-leftshadow u-p-content u-p-content-large">
+  <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content u-p-content-large">
   	<h1 class="h1--curl<?php echo rand(1, 4); ?>"><?php echo $post->post_title ?></h1>
 	</div>
 
@@ -21,11 +21,11 @@ get_header(); ?>
 		<div class="row">
 
 		 	<div class="col-xs-12 col-sm-2 u-leftshadow"></div>
-	    <div class="col-xs-12 col-sm-3 u-leftshadow u-p-content u-aligncenter u-pb2">
+	    <div class="col-xs-12 col-sm-3 u-leftshadow u-leftshadow--extra u-p-content u-aligncenter u-pb2">
 	    	<h2><span class="circle" style="transform: scale(1.<?php echo rand(1, 4) / 2; ?>) rotate(<?php echo rand(1, 360); ?>deg);"></span><?php echo romanic_number($count, true) ?></h2>
 	    </div>
 
-	    <div class="col-xs-12 col-sm-7 u-leftshadow u-p-content-large u-pb4">
+	    <div class="col-xs-12 col-sm-7 u-leftshadow u-leftshadow--extra u-p-content-large u-pb4">
 
 		    <h3><?php echo get_sub_field('header'); ?></h3>
 
